@@ -1,4 +1,5 @@
-import { Ingredient } from './classes/ingredient.js'
+import { Ingredient } from './classes/ingredient.js';
+import {Pizza} from './classes/pizza.js';
 
 window.addEventListener("DOMContentLoaded", function() {
     let bacon = new Ingredient("Bacon", "assets/img/bacon.png");
@@ -24,6 +25,7 @@ window.addEventListener("DOMContentLoaded", function() {
     let ul = document.createElement("ul");
     section.appendChild(ul);
     
+    // Création balise HTML
     for (let i = 0; i < availableIngredients.length; i++) {
 
         let li = document.createElement("li");
@@ -46,22 +48,22 @@ window.addEventListener("DOMContentLoaded", function() {
         img.setAttribute("src", availableIngredients[i].file);
         img.setAttribute("alt", availableIngredients[i].name);
         
-        article.setAttribute("class", "not:selected");
+        article.setAttribute("class","");
         
         // Ajout Nom Ingrédient
         h3.appendChild(h3text);
     }
     
-    let selectIngredient = document.querySelectorAll("#stage article");
+    // Select ingredient with click
+    let selectedIngredient = document.querySelectorAll("#stage article");
     
-    selectIngredient.addEventListener("click", function() {
-        for (ingredient of selectIngredient) {
-            if (ingredient.classList.contains()) {
-    
-                ingredient.classList.toggle("selected");
-    
-            }
-        }
-    });
+    for (let i = 0; i < selectedIngredient.length; i++) {
+        
+        selectedIngredient[i].addEventListener("click", function() {
+            
+            selectedIngredient[i].classList.toggle("selected");
+            
+        });
+    }
     
 })
