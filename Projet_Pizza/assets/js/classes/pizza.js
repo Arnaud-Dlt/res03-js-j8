@@ -10,7 +10,7 @@ class Pizza {
     }
     
     addIngredient(ingredient){
-        ingredients.push(selectedIngredient);
+        this.#ingredients.push(ingredient);
     }
     
     removeIngredient(ingredient){
