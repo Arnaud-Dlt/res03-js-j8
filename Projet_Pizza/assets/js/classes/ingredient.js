@@ -24,3 +24,5 @@ class Ingredient {
     }
     
 }
+
+export {Ingredient};
