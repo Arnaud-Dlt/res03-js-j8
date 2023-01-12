@@ -58,11 +58,24 @@ window.addEventListener("DOMContentLoaded", function() {
     let selectedIngredient = document.querySelectorAll("#stage article");
     
     for (let i = 0; i < selectedIngredient.length; i++) {
-        
+    
         selectedIngredient[i].addEventListener("click", function() {
             
             selectedIngredient[i].classList.toggle("selected");
             
+            let pizza=new Pizza("");
+            
+            if (selectedIngredient.classList.contains("selected")) {
+                pizza.removeIngredient(pizza.ingredient[i]);
+            }
+            
+            else {
+                pizza.addIngredient(pizza.ingredient[i]);
+            }
+            console.log(pizza.ingredients[i])
         });
+        
     }
+    
+    
 })
